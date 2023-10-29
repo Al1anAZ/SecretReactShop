@@ -1,0 +1,63 @@
+@import "../../values.scss";
+.Header{
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+    max-width: 1440px;
+    position: fixed;
+}
+.HeaderElement{
+    border-radius: 20px  20px 0 0;
+    padding: {
+        right: 20px;
+        left: 20px;
+    };
+    position: relative;
+    background-color: white;
+    height: 83px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.HeaderShadow{
+    background-color: white;
+   height: 2px;
+   width: 100%;
+   box-shadow: 0 5px 10px #b3b2b2;
+}
+.LogoBox{
+    display: flex;
+    h3{
+      display: flex;
+      align-items: center;
+    }
+}
+.UIBox{
+    list-style: none;
+    display: flex;
+    >li{
+        cursor: pointer;
+        border-radius: 5px;
+        display: flex;
+        transition: background-color 0.3s;
+    }
+    >li:hover{
+        background-color: $MainPurpuleLight;
+    }
+    
+}
+.AmmountInCard{
+    margin-top: 15px;
+    color: white;
+    background-color: $MainPurpule;
+    text-align: center;
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    visibility: hidden;
+    &.active{
+        visibility: visible;
+    }
+}

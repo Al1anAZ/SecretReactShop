@@ -1,0 +1,70 @@
+@import "./values.scss";
+*{
+    font-family: $MainFont;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    h1{
+       font-size: 54px;
+    }
+    h2{
+      font-size: 36px;
+    }
+    h3{
+       font-size: 24px;
+    }
+}
+.Wrapper{
+    background: $MainPurpuleLight;
+    height: 1000vh;
+    display: flex;
+    justify-content: center;
+}
+.Body{
+    border-radius: 20px;
+    background-color: white;
+    width: 1440px;
+    height: 100%;
+    padding: {
+        right: 20px;
+        left: 20px;
+    };
+}
+.AllDevices{
+    margin-top: 300px;
+    h2{
+        margin-bottom: 20px;
+        color: $MainPurpule;
+        >span{
+            color: black;
+        }
+    }
+}
+.AllDevicesBox{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Search{
+    >div{
+        background: linear-gradient(90deg, #F6C8FF 52.27%, rgba(246, 200, 255, 0) 117.52%);
+        border-radius: 20px 2px 20px 2px;
+        padding-left: 18px;
+        >input{
+            border: none;
+            outline: none;
+            padding: {
+                left: 40px
+            };
+            background: url("../public/imgs/UI/search.svg") no-repeat center left;
+            color: rgba(113, 77, 175, 0.7);
+            font-weight: 700;
+             width: 250px;
+             height: 42px;
+             &::placeholder{
+                color: rgba(113, 77, 175, 0.7);
+             }
+          }
+    }
+
+}

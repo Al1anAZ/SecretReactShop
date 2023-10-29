@@ -1,0 +1,73 @@
+@import "../../values.scss";
+.Device{
+    z-index: 0;
+    background: white;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ 
+    width: 270px;
+
+    padding: {
+        top: 17px;
+        bottom: 30px;
+    };
+
+   border-radius: 30px;
+   box-shadow: 1px 5px 10px rgb(189, 188, 188);
+
+   transition: transform .1s;
+   &:hover{
+    transform: translate(0,-20px);
+    box-shadow: 1px 5px 10px rgb(70, 70, 70);
+   }
+   &.loading{
+    padding-top: 30px;
+    >div{
+        background-color: gainsboro;
+        border-radius: 5px;
+        margin-bottom: 22px;
+    }
+    >button{
+        background-color: gainsboro;
+    }
+    &:hover{
+        transform: none;
+        box-shadow: 1px 5px 10px rgb(189, 188, 188);;
+       }
+   }
+}
+.DeviceText{
+    margin: {
+        top: 30px;
+        bottom: 20px;
+    };
+  text-align: center;
+  >hr{
+    margin-top: 10px;
+  }
+  >p{
+    margin-top: 10px;
+    font-size: 20px;
+    color: $MainPurpule;
+   }
+}
+.LoadingImg{
+    height: 189px;
+    width: 153px;
+}
+.LoadingName{
+   width: 190px;
+   height: 20px;
+}
+.LoadingPrice{
+    margin-top: 49px;
+    width: 135px;
+    height: 20px;
+}
+@media screen and (max-width:  600px){
+    .Device{
+        margin: auto auto 30px auto;
+    }
+}

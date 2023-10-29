@@ -1,0 +1,19 @@
+@import "../../../values.scss";
+.MyButton{
+    background: $MainPurpule;
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.1s;
+    &:hover{
+        background: $MainPurpuleLight;
+    }
+    &:active{
+        background: $MainPurpuleDark;
+    }
+    &.disable{
+        cursor: not-allowed;
+        background: $MainPurpuleLight;
+    }
+}
