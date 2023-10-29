@@ -3,7 +3,7 @@ import MyButton from "../UI/MyButton/MyButton";
 
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCard,minusAmmount,plusAmmount } from "../../store/CardSlice";
+import { deleteFromCard,minusAmmount,plusAmmount,setVisibleCrad } from "../../store/CardSlice";
 
 
 function DeviceInCard({id,device}){
@@ -32,8 +32,8 @@ function DeviceInCard({id,device}){
 }
 
 
-function ShoppingCard({visible,setVisible}){
-
+function ShoppingCard(){
+const dipatch = useDispatch()
 const devicesInCard = useSelector(state => state.card.devicesInCard);
 const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
   return prev +curr.price * curr.count
@@ -43,7 +43,7 @@ const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
        <div className={classes.ShoppingCard}>
            <div className={classes.TopShoppingCard}>
             <h2>Кошик</h2>
-              <div className={classes.Xclose} onClick={()=> setVisible(!visible)}></div>
+              <div className={classes.Xclose} onClick={()=> dipatch(setVisibleCrad(false))}></div>
            </div>
            <div className={classes.DevicesInCard}>
             {devicesInCard.length ? devicesInCard.map(device=>

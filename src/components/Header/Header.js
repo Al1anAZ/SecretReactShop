@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setVisibleCrad } from "../../store/CardSlice";
 import classes from "./Header.module.scss"
 import React, { useMemo } from "react";
 
 
-export default React.memo(function Header({handleShoppingCard,visibleShoppingCart}){
+export default React.memo(function Header(){
+  const dipatch = useDispatch();
   const showAmmount = [classes.AmmountInCard]
   const devicesInCard = useSelector(state => state.card.devicesInCard)
   const ammoutInCard = useMemo(()=> devicesInCard.reduce((prev,curr)=> prev + 1 * curr.count,0),[devicesInCard])
@@ -18,7 +20,7 @@ export default React.memo(function Header({handleShoppingCard,visibleShoppingCar
            <h3>SecretReactShop</h3>
         </div>
         <ul className={classes.UIBox}>
-          <li style={{marginRight: 10}} onClick={()=>handleShoppingCard(!visibleShoppingCart)}>
+          <li style={{marginRight: 10}} onClick={()=>dipatch(setVisibleCrad(true))}>
             <img src="/imgs/UI/ShoppingCart.svg" width={24} height={24} alt="ShoppingCart"/>
             <span className={showAmmount.join(" ")}>{ammoutInCard}</span>
           </li>

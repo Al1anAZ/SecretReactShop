@@ -3,9 +3,10 @@ import ShoppingCard from "./components/ShoppingCard/ShoppingCard";
 import Device  from "./components/Device/Device";
 import MyModal from "./components/UI/MyModal/MyModal";
 
-import { useState,useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosDevices } from "./store/asyncActions/devices";
+import { setVisibleCrad } from "./store/CardSlice";
 
 import style from "./style.scss";
 
@@ -14,7 +15,7 @@ const loadingdevices = [<Device loading = {true}/>,<Device loading = {true}/>,<D
 
 const dispatch = useDispatch();
 const devices = useSelector(state => state.devices.devices);
-const [showShoppingCard, setShowShoppingCard] = useState(false);
+const visibleCard = useSelector(state => state.card.cardVisible)
 
 useEffect(()=>{
   dispatch(axiosDevices())
@@ -22,14 +23,9 @@ useEffect(()=>{
 
   return (
     <div className="Wrapper">
-            <Header 
-            handleShoppingCard={setShowShoppingCard}
-            visibleShoppingCart={showShoppingCard}/>
-            <MyModal setVisible={setShowShoppingCard} visible={showShoppingCard}>
-               <ShoppingCard 
-               setVisible={setShowShoppingCard} 
-               visible={showShoppingCard}
-               />
+            <Header/>
+            <MyModal visible={visibleCard} setVisible={()=>dispatch(setVisibleCrad(false))}>
+               <ShoppingCard />
             </MyModal> 
      <div className="Body">
         <div className="Slider">

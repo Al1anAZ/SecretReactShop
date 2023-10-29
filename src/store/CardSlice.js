@@ -5,7 +5,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const cardSlice = createSlice({
     name: "card",
     initialState: {
-        devicesInCard: []
+        devicesInCard: [],
+        cardVisible: false
     },
     reducers: {
         addToCard(state,action){
@@ -37,9 +38,12 @@ const cardSlice = createSlice({
                    return item.count--
                 return item
              })
+        },
+        setVisibleCrad(state,action){
+            state.cardVisible = action.payload;
         }
     }
 })
 
 export default cardSlice.reducer
-export const {addToCard,deleteFromCard,plusAmmount,minusAmmount} = cardSlice.actions
+export const {addToCard,deleteFromCard,plusAmmount,minusAmmount,setVisibleCrad} = cardSlice.actions
