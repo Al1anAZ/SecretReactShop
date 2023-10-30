@@ -15,7 +15,8 @@
     }
 }
 .Wrapper{
-    background: $MainPurpuleLight;
+    background: url('../public/imgs/bg.jpg') no-repeat fixed center;
+    background-size: cover;
     height: 1000vh;
     display: flex;
     justify-content: center;

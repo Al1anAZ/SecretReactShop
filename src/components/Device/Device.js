@@ -3,13 +3,25 @@ import MyButton from "../UI/MyButton/MyButton";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/CartSlice";
+import { addToFavorites,deleteFromFavorites } from "../../store/DevicesSlice";
 
 function Device({device,loading = false}){
+    const dipatch = useDispatch();
+    const favoriteItems = useSelector(state=> state.devices.favorites)
+    let isFavorite;
     const rootClass = [classes.Device]
     if(loading){
         rootClass.push(classes.loading)
     }
-    const dipatch = useDispatch();
+    else{
+        isFavorite = favoriteItems.find(item=> item.id === device.id)
+    }
+    function handleFavorite(action, item){
+       if(action)
+          dipatch(deleteFromFavorites(item))
+        else
+          dipatch(addToFavorites(item))
+    }
     return(
         <>
         {loading ? 
@@ -19,9 +31,14 @@ function Device({device,loading = false}){
             <div className={classes.LoadingPrice}></div>
             <MyButton  disable inlinestyle={LoadingMyButtonStyle}></MyButton>
         </div>
-         : 
+         :
+         
         <div className={rootClass.join(" ")}>
-                <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}><img src="/imgs/Ui/Heart.svg" alt="Heart"/></div>
+            {
+              <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}>
+                  <img src={isFavorite ? "/imgs/Ui/Liked.svg" : "/imgs/Ui/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
+              </div>
+            }
                 <img src={device.src} alt="Device" width={153} height={189}/>
             <div className={classes.DeviceText}>
              <b>{device.name}</b>

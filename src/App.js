@@ -9,6 +9,7 @@ import { axiosDevices } from "./store/asyncActions/devices";
 import { setVisibleCart,updateCart } from "./store/CartSlice";
 
 import style from "./style.scss";
+import { updateFavorites } from "./store/DevicesSlice";
 
 function App() {
 const loadingdevices = [<Device key={0} loading = {true}/>,<Device  key={1} loading = {true}/>,<Device  key={2} loading = {true}/>,<Device  key={3} loading = {true}/>,<Device key={4}  loading = {true}/>]
@@ -17,14 +18,27 @@ const dispatch = useDispatch();
 const devices = useSelector(state => state.devices.devices);
 const visibleCart = useSelector(state => state.cart.cartVisible)
 const cart = useSelector(state => state.cart.devicesInCart)
+const favoriteItems = useSelector(state => state.devices.favorites)
 
-//При первом запуске, проверка, есть ли что то в локал сторадже, если да то заливаем в корзину
+//При первом запуске, проверка, есть ли что то в локал сторадже, если да то заливаем в корзину и в любимые 
 useEffect(()=>{
-  const localst = JSON.parse(localStorage.getItem('cart'))
-  if(localst.length)
-    dispatch(updateCart(localst))
-
+  const cardItemsInStore = JSON.parse(localStorage.getItem('cart'))
+  const favoriteItemsInStore = JSON.parse(localStorage.getItem('favorites'))
+  if(favoriteItemsInStore){
+    if(favoriteItemsInStore.length){
+      dispatch(updateFavorites(favoriteItemsInStore))
+    }
+  }
+  if(cardItemsInStore){
+    if(cardItemsInStore.length){
+      dispatch(updateCart(cardItemsInStore))
+    }
+  }
 },[])
+//Обновление локалстораджа,если что то добавлено в любимые 
+useEffect(()=>{
+   localStorage.setItem('favorites', JSON.stringify(favoriteItems))
+},[favoriteItems])
 
 //Обновление локалстораджа,если что то добавлено в корзину 
 useEffect(()=>{
@@ -49,11 +63,11 @@ useEffect(()=>{
        <div className="AllDevices">
           <div style={{display: "flex", justifyContent: "space-between"}}>  
             <h2>Усі<span> девайси:</span></h2>
-          {devices.length ? <div className="Search">
+          {devices.length && <div className="Search">
               <div>
                 <input placeholder="Я шукаю..."></input>
               </div>
-            </div> : null}
+            </div>}
          </div>
         <div className="AllDevicesBox">
         {devices.length ? devices.map(device=>

@@ -25,7 +25,7 @@ export default React.memo(function Header(){
             <span className={showAmmount.join(" ")}>{ammoutInCard}</span>
           </li>
           <li style={{marginRight: 10}}>
-            <img src="imgs/UI/Heart.svg" width={24} height={24} alt="Profile"/>
+            <img src="imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
           </li>
           <li>
             <img src="/imgs/UI/Profile.svg" width={24} height={24} alt="Profile"/>
