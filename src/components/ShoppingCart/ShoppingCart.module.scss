@@ -1,14 +1,14 @@
 @import "../../values.scss";
-.ShoppingCard{
+.ShoppingCart{
     width: 560px;
 }
-.TopShoppingCard{
+.TopShoppingCart{
     display: flex;
     justify-content: space-between;
     padding-bottom: 25px;
     border-bottom: 1px solid black;
 }
-.DevicesInCard{
+.DevicesInCart{
     
     padding: {
       left: 10px;
@@ -31,7 +31,7 @@
         border-radius: 10px;
     }
 }
-.BottomShoppingCard{
+.BottomShoppingCart{
     display: flex;
     justify-content: space-between;
     border-top: 1px solid black;
@@ -45,7 +45,7 @@
         color: $MainPurpule;
     }
 }
-.DeviceInCard{
+.DeviceInCart{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;

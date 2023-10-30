@@ -1,8 +1,8 @@
 import classes from "./Device.module.scss"
 import MyButton from "../UI/MyButton/MyButton";
 
-import { useDispatch } from "react-redux";
-import { addToCard } from "../../store/CardSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../store/CartSlice";
 
 function Device({device,loading = false}){
     const rootClass = [classes.Device]
@@ -29,7 +29,7 @@ function Device({device,loading = false}){
              <p>{device.price} грн.</p>
             </div>
            <MyButton inlinestyle={MyButtonStyle}
-            handle={()=>dipatch(addToCard({...device, count: 1}))}>
+            handle={()=>dipatch(addToCart({...device, count: 1}))}>
                 Купити</MyButton>
        </div>}
 

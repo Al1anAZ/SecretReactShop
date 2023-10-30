@@ -1,10 +1,10 @@
 import { configureStore,combineReducers} from '@reduxjs/toolkit';
-import CardSlice from './CardSlice';
+import CartSlice from './CartSlice';
 import DevicesSlice from './DevicesSlice';
 
 const rootReducer = combineReducers({
    devices: DevicesSlice,
-   card: CardSlice
+   cart: CartSlice
 })
 
 export const store = configureStore({
