@@ -1,0 +1,19 @@
+@import "../../values.scss";
+
+.FavoriteDevices{
+    h2{
+        margin-bottom: 20px;
+        color: $MainPurpule;
+        >span{
+            color: black;
+        }
+    }
+}
+.AllFavoriteDevices{
+    padding: {
+        top: 20px;
+    };
+    justify-content:space-evenly ;
+    display: flex;
+    flex-wrap: wrap;
+}

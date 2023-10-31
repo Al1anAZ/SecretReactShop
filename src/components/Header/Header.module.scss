@@ -27,10 +27,14 @@
    box-shadow: 0 5px 10px #b3b2b2;
 }
 .LogoBox{
+    text-decoration: none;
     display: flex;
     h3{
       display: flex;
       align-items: center;
+    }
+    &:active{
+        color: $MainPurpuleLight;
     }
 }
 .UIBox{
@@ -41,13 +45,16 @@
         border-radius: 5px;
         display: flex;
         transition: background-color 0.3s;
+        >a{
+            display: flex;
+        }
     }
     >li:hover{
         background-color: $MainPurpuleLight;
     }
     
 }
-.AmmountInCard{
+.Ammount{
     margin-top: 15px;
     color: white;
     background-color: $MainPurpule;

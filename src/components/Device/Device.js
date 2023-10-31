@@ -4,16 +4,13 @@ import MyButton from "../UI/MyButton/MyButton";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/CartSlice";
 import { addToFavorites,deleteFromFavorites } from "../../store/DevicesSlice";
+import ContentLoader from "react-content-loader";
 
 function Device({device,loading = false}){
     const dipatch = useDispatch();
     const favoriteItems = useSelector(state=> state.devices.favorites)
     let isFavorite;
-    const rootClass = [classes.Device]
-    if(loading){
-        rootClass.push(classes.loading)
-    }
-    else{
+    if(!loading){
         isFavorite = favoriteItems.find(item=> item.id === device.id)
     }
     function handleFavorite(action, item){
@@ -25,20 +22,26 @@ function Device({device,loading = false}){
     return(
         <>
         {loading ? 
-        <div className={rootClass.join(" ")}>
-            <div className={classes.LoadingImg}></div>
-            <div className={classes.LoadingName}></div>
-            <div className={classes.LoadingPrice}></div>
-            <MyButton  disable inlinestyle={LoadingMyButtonStyle}></MyButton>
+        <div className={classes.Device}>
+           <ContentLoader 
+               speed={2}
+               width={270}
+               height={357}
+               viewBox="0 0 270 357"
+               backgroundColor="#f3f3f3"
+               foregroundColor="#ecebeb"
+            >
+          <rect x="40" y="235" rx="5" ry="5" width="190" height="20" /> 
+          <rect x="55" y="20" rx="5" ry="5" width="153" height="189" /> 
+          <rect x="65" y="275" rx="5" ry="5" width="135" height="20" /> 
+          <rect x="27" y="319" rx="5" ry="5" width="216" height="36" />
+         </ContentLoader>
         </div>
          :
-         
-        <div className={rootClass.join(" ")}>
-            {
+        <div className={classes.Device}>
               <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}>
                   <img src={isFavorite ? "/imgs/Ui/Liked.svg" : "/imgs/Ui/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
               </div>
-            }
                 <img src={device.src} alt="Device" width={153} height={189}/>
             <div className={classes.DeviceText}>
              <b>{device.name}</b>

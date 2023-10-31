@@ -1,9 +1,9 @@
 import classes from "./ShoppingCart.module.scss"
 import MyButton from "../UI/MyButton/MyButton";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart } from "../../store/CartSlice";
+import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart, updateCart,setisOrderComplete } from "../../store/CartSlice";
 
 
 function DeviceInCart({id,device}){
@@ -40,7 +40,7 @@ const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
 },0),[devicesInCard])
 
     return(
-       <div className={classes.ShoppingCart}>
+         <div className={classes.ShoppingCart}>
            <div className={classes.TopShoppingCart}>
             <h2>Кошик</h2>
               <div className={classes.Xclose} onClick={()=> dipatch(setVisibleCart(false))}></div>
@@ -63,7 +63,12 @@ const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
                     {price} грн.
                   </h2>
                </div>
-                 <MyButton inlinestyle={BuyNowButtonStyle} disable = {devicesInCard.length ? false : true}>
+                 <MyButton inlinestyle={BuyNowButtonStyle} disable = {devicesInCard.length ? false : true}
+                  handle={()=>{
+                  dipatch(updateCart([])) 
+                  dipatch(setisOrderComplete(true))
+                }
+                  }>
                     Купити зараз!
                  </MyButton>
            </div>
@@ -90,4 +95,8 @@ const BuyNowButtonStyle = {
     borderRadius: "180px 10px 300px 180px",
     fontSize: 24,
     padding: "18px 45px 18px 45px",
+}
+const BackButtonStyle = {
+  ...BuyNowButtonStyle,
+  borderRadius: "180px"
 }
