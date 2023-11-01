@@ -7,7 +7,7 @@ const cartSlice = createSlice({
     initialState: {
         devicesInCart: [],
         cartVisible: false,
-        isOrderComplete: false
+        isOrderComplete: true
     },
     reducers: {
         updateCart(state,action){

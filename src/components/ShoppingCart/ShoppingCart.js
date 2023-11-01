@@ -1,13 +1,13 @@
 import classes from "./ShoppingCart.module.scss"
 import MyButton from "../UI/MyButton/MyButton";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart, updateCart,setisOrderComplete } from "../../store/CartSlice";
+import { useNavigate } from "react-router-dom";
 
 
 function DeviceInCart({id,device}){
- 
   const dispatch = useDispatch();
 
     return(
@@ -33,6 +33,7 @@ function DeviceInCart({id,device}){
 
 
 function ShoppingCart(){
+const navigate = useNavigate();
 const dipatch = useDispatch()
 const devicesInCard = useSelector(state => state.cart.devicesInCart);
 const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
@@ -65,8 +66,8 @@ const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
                </div>
                  <MyButton inlinestyle={BuyNowButtonStyle} disable = {devicesInCard.length ? false : true}
                   handle={()=>{
-                  dipatch(updateCart([])) 
-                  dipatch(setisOrderComplete(true))
+                  dipatch(setVisibleCart(false))
+                  navigate('/order')
                 }
                   }>
                     Купити зараз!

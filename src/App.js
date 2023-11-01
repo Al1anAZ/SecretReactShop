@@ -3,15 +3,16 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import MyModal from "./components/UI/MyModal/MyModal";
 import Home from "./pages/Home/Home";
 import Favorites from "./pages/Favorites/Favorites";
+import Order from "./pages/Order/Order";
 
 import { Route,Routes } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosDevices } from "./store/asyncActions/devices";
 import { setVisibleCart,updateCart } from "./store/CartSlice";
+import { updateFavorites } from "./store/DevicesSlice";
 
 import style from "./style.scss";
-import { updateFavorites } from "./store/DevicesSlice";
 
 function App() {
 
@@ -59,6 +60,7 @@ useEffect(()=>{
         <Routes> 
           <Route path="/" element={<Home/>}></Route>
           <Route path="/favorites" element={<Favorites/>}></Route>
+          <Route path="/order" element={<Order/>}></Route>
         </Routes>
      </div>
     </div>

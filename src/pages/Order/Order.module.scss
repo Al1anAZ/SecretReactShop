@@ -1,0 +1,109 @@
+@import "../../values.scss";
+
+.OrderForm{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+    padding-top: 50px;
+     text-align: center;
+     margin: auto;
+     max-width: 500px;
+    >form{
+      height: 250px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+        >input{
+          border-radius: 10px;
+          border: 1px solid $MainPurpule;
+          &:focus{
+            outline: 2px  solid $MainPurpule;
+          }
+          &::placeholder{
+            color: $MainPurpuleLight;
+         }
+          padding: {
+            left: 20px;
+          };
+          width: 500px;
+          height: 50px;
+        }
+    }
+}
+.Devices{
+  margin: {
+    top: 30px
+  };
+  padding: {
+    top: 15px;
+    left: 10px;
+    right: 10px;
+  };
+  border: 2px solid $MainPurpule;
+  border-radius: 10px;
+  width: 500px;
+  height: 300px;
+}
+.DevicesList{
+   height: 230px;
+    overflow: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      border-radius: 10px;
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+      background: $MainPurpule;
+      border-radius: 10px;
+    }
+}
+.DeviceInOrder{
+   height: 130px;
+   box-shadow:0 1px 5px  rgb(189, 188, 188);
+   border-radius: 20px;
+   margin: {
+    top: 5px;
+    left: 10px;
+    bottom: 10px;
+    right: 15px;
+   };
+   padding: {
+    top: 10px;
+    bottom: 10px;
+    right: 30px;
+    left: 10px;
+   }
+   &:hover{
+    box-shadow:0 1px 5px rgb(70, 70, 70);
+   }
+   >div{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+   }
+}
+.DeviceText{
+  padding-top: 5px;
+  >p{
+    color: $MainPurpule;
+    font-weight: 600;
+  }
+}
+.TotalPriceAndButtonChange{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  >h4{
+    text-align: start;
+    >span{
+      color: $MainPurpule;
+    }
+  }
+  button{
+    width: 120px;
+    height: 100%;
+     border-radius: 10px;
+  }
+}

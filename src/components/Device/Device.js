@@ -32,7 +32,7 @@ function Device({device,loading = false}){
                foregroundColor="#ecebeb"
             >
           <rect x="40" y="235" rx="5" ry="5" width="190" height="20" /> 
-          <rect x="55" y="20" rx="5" ry="5" width="153" height="189" /> 
+          <rect x="60" y="20" rx="5" ry="5" width="153" height="189" /> 
           <rect x="65" y="275" rx="5" ry="5" width="135" height="20" /> 
           <rect x="27" y="319" rx="5" ry="5" width="216" height="36" />
          </ContentLoader>
@@ -61,11 +61,5 @@ const MyButtonStyle = {
     height: 36,
     width: 216,
     borderRadius: "2px 2px 17px 17px"
-}
-const LoadingMyButtonStyle ={
-    fontSize: 20,
-    height: 36,
-    width: 216,
-    borderRadius: "2px 2px 17px 17px",
 }
 export default Device
