@@ -7,7 +7,6 @@ const cartSlice = createSlice({
     initialState: {
         devicesInCart: [],
         cartVisible: false,
-        isOrderComplete: true
     },
     reducers: {
         updateCart(state,action){
@@ -45,12 +44,9 @@ const cartSlice = createSlice({
         },
         setVisibleCart(state,action){
             state.cartVisible = action.payload;
-        },
-        setisOrderComplete(state, action){
-            state.isOrderComplete = action.payload
         }
     }
 })
 
 export default cartSlice.reducer
-export const {addToCart,deleteFromCart,plusAmmount,minusAmmount,setVisibleCart,updateCart,setisOrderComplete} = cartSlice.actions
+export const {addToCart,deleteFromCart,plusAmmount,minusAmmount,setVisibleCart,updateCart} = cartSlice.actions

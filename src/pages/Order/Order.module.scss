@@ -5,10 +5,17 @@
    flex-direction: column;
    flex-wrap: wrap;
    align-items: center;
-    padding-top: 50px;
-     text-align: center;
-     margin: auto;
-     max-width: 500px;
+   padding-top: 30px;
+   text-align: center;
+   margin: auto;
+   max-width: 500px;
+     >h3{
+      margin-top: 15px;
+      text-align: center;
+      >span{
+        color: $MainPurpule;
+      }
+    }
     >form{
       height: 250px;
       display: flex;
@@ -75,14 +82,50 @@
     right: 30px;
     left: 10px;
    }
-   &:hover{
-    box-shadow:0 1px 5px rgb(70, 70, 70);
-   }
    >div{
     display: flex;
     justify-content: space-between;
     height: 100%;
    }
+   &.editing{
+    &:hover{
+      box-shadow:0 1px 5px rgb(70, 70, 70);
+     }
+   }
+}
+.DeleteItem{
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  margin: {
+    top: 6px;
+    right: 1px;
+  }
+ &::before,&::after{
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    background-color: black;
+    transition: background-color 0.3s;
+ }
+ &::before {
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 45%;
+  transform: rotate(45deg);
+ } 
+ &::after{
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 45%;
+  transform: rotate(-45deg);
+ }
+ &:hover::before, &:hover::after {
+  background-color: red;
+ }
 }
 .DeviceText{
   padding-top: 5px;
@@ -91,19 +134,43 @@
     font-weight: 600;
   }
 }
+.DeviceCount{
+  margin-top: 5px;
+  position: relative;
+  >input{
+      font: {
+          size: 15px;
+          weight: 500;
+      };
+      text-align: center;
+      color: $MainPurpule;
+      border-radius: 15px;
+      outline: none;
+      border: none;
+      max-width: 69px;
+      height: 21px;
+      -moz-appearance: textfield;
+      background-color: $MainPurpuleLight;
+      &::-webkit-inner-spin-button,&::-webkit-outer-spin-button{
+          -webkit-appearance: none;
+          margin: 0;
+
+      }
+
+  }
+}
 .TotalPriceAndButtonChange{
   margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-  >h4{
-    text-align: start;
-    >span{
-      color: $MainPurpule;
-    }
-  }
+  float: right;
   button{
     width: 120px;
-    height: 100%;
+    height: 35px;
      border-radius: 10px;
+  }
+}
+.ValiInput{
+  border: 1px solid red !important;
+  &:focus{
+    outline: 2px  solid red  !important;
   }
 }

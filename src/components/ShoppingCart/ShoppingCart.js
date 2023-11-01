@@ -3,7 +3,7 @@ import MyButton from "../UI/MyButton/MyButton";
 
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart, updateCart,setisOrderComplete } from "../../store/CartSlice";
+import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart,setisOrderComplete } from "../../store/CartSlice";
 import { useNavigate } from "react-router-dom";
 
 
@@ -96,8 +96,4 @@ const BuyNowButtonStyle = {
     borderRadius: "180px 10px 300px 180px",
     fontSize: 24,
     padding: "18px 45px 18px 45px",
-}
-const BackButtonStyle = {
-  ...BuyNowButtonStyle,
-  borderRadius: "180px"
 }
