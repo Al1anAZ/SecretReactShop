@@ -1,0 +1,31 @@
+@import "../../values.scss";
+
+.Footer{
+    border-top: 1px solid $MainPurpule;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.LeftFooter{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   >h4{
+      margin-left: 15px;
+      padding-top: 30px;
+   }
+}
+.RightFooter{
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    >a{
+        margin-left: 15px;
+    }
+    >h4{
+        padding-top: 20px;
+    }
+}

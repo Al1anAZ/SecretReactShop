@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import MyModal from "./components/UI/MyModal/MyModal";
 import Home from "./pages/Home/Home";
@@ -62,6 +63,7 @@ useEffect(()=>{
           <Route path="/favorites" element={<Favorites/>}></Route>
           <Route path="/order" element={<Order/>}></Route>
         </Routes>
+        <Footer/>
      </div>
     </div>
   );
