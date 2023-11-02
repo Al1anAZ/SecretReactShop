@@ -10,6 +10,7 @@ function Favorites(){
          <div className={classes.AllFavoriteDevices}>
              {favDevices.length ? favDevices.map(device=>
                 <Device
+                 infavorite
                  key={device.id}
                  device={device}
                 />

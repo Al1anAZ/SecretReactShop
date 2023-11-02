@@ -12,7 +12,7 @@ function DeviceInCart({id,device}){
 
     return(
      <div className={classes.DeviceInCart}>
-        <img src={device.src} alt="DeviceInCard" width={153} height={189}/>
+        <img src={`../SecretReactShop${device.src}`} alt="DeviceInCard" width={153} height={189}/>
         <div>
           <span>{device.name}</span>
            <hr/>

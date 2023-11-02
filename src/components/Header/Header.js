@@ -21,7 +21,7 @@ export default React.memo(function Header(){
     return(
         <div className={classes.Header}>
         <div className={classes.HeaderElement}>
-            <Link to="/SecretReactShop" className={classes.LogoBox}>
+            <Link to="/SecretReactShop/" className={classes.LogoBox}>
               <img src="./imgs/Logo.svg" alt="Logo"/>
               <h3>SecretReactShop</h3>
             </Link>

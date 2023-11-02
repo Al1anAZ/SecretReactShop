@@ -59,7 +59,7 @@ useEffect(()=>{
               </MyModal> 
      <div className="Body">
         <Routes> 
-          <Route path="/SecretReactShop" element={<Home/>}></Route>
+          <Route path="/SecretReactShop/" element={<Home/>}></Route>
           <Route path="/favorites" element={<Favorites/>}></Route>
           <Route path="/order" element={<Order/>}></Route>
         </Routes>
