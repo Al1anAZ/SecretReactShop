@@ -21,8 +21,8 @@ export default React.memo(function Header(){
     return(
         <div className={classes.Header}>
         <div className={classes.HeaderElement}>
-            <Link to="/" className={classes.LogoBox}>
-              <img src="/imgs/Logo.svg" alt="Logo"/>
+            <Link to="/SecretReactShop" className={classes.LogoBox}>
+              <img src="./imgs/Logo.svg" alt="Logo"/>
               <h3>SecretReactShop</h3>
             </Link>
         <ul className={classes.UIBox}>
@@ -32,7 +32,7 @@ export default React.memo(function Header(){
           </li>
           <li>
             <Link to="/favorites">
-              <img src="imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
+              <img src="./imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
               <span className={showAmmountFavorites.join(" ")}>{favDevices.length}</span>
             </Link>
           </li>

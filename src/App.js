@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import Favorites from "./pages/Favorites/Favorites";
 import Order from "./pages/Order/Order";
 
-import { Route,Routes } from "react-router-dom";
+import { Route,Routes,useNavigate} from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosDevices } from "./store/asyncActions/devices";
@@ -19,6 +19,7 @@ function App() {
 
 
 const dispatch = useDispatch();
+const navigate = useNavigate();
 const visibleCart = useSelector(state => state.cart.cartVisible)
 const cart = useSelector(state => state.cart.devicesInCart)
 const favoriteItems = useSelector(state => state.devices.favorites)
@@ -50,7 +51,6 @@ useEffect(()=>{
 useEffect(()=>{
   localStorage.setItem('cart',JSON.stringify(cart))
 },[cart])
-
   return (
     <div className="Wrapper">
             <Header/>
@@ -59,7 +59,7 @@ useEffect(()=>{
               </MyModal> 
      <div className="Body">
         <Routes> 
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/SecretReactShop" element={<Home/>}></Route>
           <Route path="/favorites" element={<Favorites/>}></Route>
           <Route path="/order" element={<Order/>}></Route>
         </Routes>
@@ -68,5 +68,7 @@ useEffect(()=>{
     </div>
   );
 }
+
+
 
 export default App;

@@ -40,7 +40,7 @@ function Device({device,loading = false}){
          :
         <div className={classes.Device}>
               <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}>
-                  <img src={isFavorite ? "/imgs/Ui/Liked.svg" : "/imgs/Ui/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
+                  <img src={isFavorite ? "./imgs/Ui/Liked.svg" : "./imgs/Ui/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
               </div>
                 <img src={device.src} alt="Device" width={170} height={189}/>
             <div className={classes.DeviceText}>
