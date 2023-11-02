@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SecretReactShop/static/css/main.ac542801.css",
-    "main.js": "/SecretReactShop/static/js/main.0a136d92.js",
-    "static/media/bg.webp": "/SecretReactShop/static/media/bg.4f7dada94a2f626b5625.webp",
-    "static/media/search.svg": "/SecretReactShop/static/media/search.7dfa4c6734c3c8d3cedd.svg",
-    "index.html": "/SecretReactShop/index.html",
-    "main.ac542801.css.map": "/SecretReactShop/static/css/main.ac542801.css.map",
-    "main.0a136d92.js.map": "/SecretReactShop/static/js/main.0a136d92.js.map"
+    "main.css": "/static/css/main.2df3e6e0.css",
+    "main.js": "/static/js/main.0a136d92.js",
+    "static/media/bg.webp": "/static/media/bg.4f7dada94a2f626b5625.webp",
+    "static/media/search.svg": "/static/media/search.7dfa4c6734c3c8d3cedd.svg",
+    "index.html": "/index.html",
+    "main.2df3e6e0.css.map": "/static/css/main.2df3e6e0.css.map",
+    "main.0a136d92.js.map": "/static/js/main.0a136d92.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac542801.css",
+    "static/css/main.2df3e6e0.css",
     "static/js/main.0a136d92.js"
   ]
 }
