@@ -27,7 +27,7 @@ export default React.memo(function Header(){
             </Link>
         <ul className={classes.UIBox}>
           <li style={{marginRight: 10}} onClick={()=>dipatch(setVisibleCart(true))}>
-            <img src="/imgs/UI/ShoppingCart.svg" width={24} height={24} alt="ShoppingCart"/>
+            <img src="./imgs/UI/ShoppingCart.svg" width={24} height={24} alt="ShoppingCart"/>
             <span className={showAmmountInCard.join(" ")}>{ammoutInCard}</span>
           </li>
           <li>
