@@ -81,8 +81,8 @@ function Order(){
         </div>
         :  
          <>
-         {loading ? 
-        <div className={classes.Loading}><img src="./imgs/UI/Loading.svg" width={300} height={300}/></div>
+         {!loading ? 
+        <div className={classes.Loading}><img src="../SecretReactShop/imgs/UI/Loading.svg" width={300} height={300}/></div>
         :  
         <div className={classes.OrderForm}>
                   <h2 style={{color: "rgba(113, 77, 175, 1)"}}>Оформлення<span style={{color: "black"}}> замовлення:</span></h2>
