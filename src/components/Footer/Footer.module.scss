@@ -29,20 +29,35 @@
         padding-top: 20px;
     }
 }
+.FooterIMGSCONTACTS{
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+}
 
 @media screen and (max-width: 600px) {
     .Footer{
         flex-direction: column;
         height: 0;
         padding: {
+            top: 10px;
             left: 20px;
             right: 20px;
         };
     }
     .LeftFooter{
+        text-wrap:pretty;
         >h4{
+            max-width: 200px;
             padding-top: 0;
-            font-size: 14px;
+            font-size: 13px;
         }
+        >img{
+            height: 40px;
+            width: 40px;
+        }
+    }
+    .RightFooter{
+        flex-direction: column;
     }
 }
