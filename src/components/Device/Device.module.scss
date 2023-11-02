@@ -53,21 +53,30 @@
     color: $MainPurpule;
    }
 }
-.LoadingImg{
-    height: 189px;
-    width: 153px;
-}
-.LoadingName{
-   width: 190px;
-   height: 20px;
-}
-.LoadingPrice{
-    margin-top: 49px;
-    width: 135px;
-    height: 20px;
-}
 @media screen and (max-width:  600px){
     .Device{
         margin: auto auto 30px auto;
+        width: 210px;
+        button{
+            width: 150px !important;
+        }
+        >img{
+            width: 130px;
+            height: 150px;
+        }
+    }
+    .DeviceText{
+        margin: {
+            top: 10px;
+            bottom: 7px;
+        };
+        >b{
+            display: block;
+            max-width: 150px;
+            font-size: 14px;
+        }
+        >p{
+            font-size: 18px;
+        }
     }
 }

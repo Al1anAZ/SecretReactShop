@@ -40,3 +40,23 @@
     }
 
 }
+.SearchAndText{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    .AllDevicesBox{
+        >h2{
+            font-size: 24px;
+            
+        }
+    }
+    .SearchAndText {
+        >h2{
+            text-align: center;
+        }
+        justify-content: center;
+    }
+}

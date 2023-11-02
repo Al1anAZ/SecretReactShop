@@ -30,15 +30,15 @@ export default React.memo(function Header(){
             <img src="/imgs/UI/ShoppingCart.svg" width={24} height={24} alt="ShoppingCart"/>
             <span className={showAmmountInCard.join(" ")}>{ammoutInCard}</span>
           </li>
-          <li style={{marginRight: 10}}>
+          <li>
             <Link to="/favorites">
               <img src="imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
               <span className={showAmmountFavorites.join(" ")}>{favDevices.length}</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <img src="/imgs/UI/Profile.svg" width={24} height={24} alt="Profile"/>
-          </li>
+          </li> */}
         </ul>
           </div>
         <div className={classes.HeaderShadow}></div>

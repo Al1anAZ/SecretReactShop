@@ -15,7 +15,7 @@ function Home(){
           <div className={classes.Slider}>
            </div>
        <div className={classes.AllDevices}>
-        <div style={{display: "flex", justifyContent: "space-between"}}>  
+        <div className={classes.SearchAndText}>  
            {search.length ? <h2>Результати<span> пошуку:</span> {`"${search}"`}</h2> :<h2>Усі<span> девайси:</span></h2>}
               {devices.length ? 
               <div className={classes.Search}>

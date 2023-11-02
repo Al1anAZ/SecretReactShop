@@ -29,3 +29,20 @@
         padding-top: 20px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .Footer{
+        flex-direction: column;
+        height: 0;
+        padding: {
+            left: 20px;
+            right: 20px;
+        };
+    }
+    .LeftFooter{
+        >h4{
+            padding-top: 0;
+            font-size: 14px;
+        }
+    }
+}

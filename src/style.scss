@@ -15,7 +15,7 @@
     }
 }
 .Wrapper{
-    background: url('../public/imgs/bg.jpg') no-repeat fixed center;
+    background: url('../public/imgs/bg.webp') no-repeat fixed center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -25,8 +25,18 @@
     background-color: white;
     width: 1440px;
     padding: {
-        top: 270px;
+        top: 30px;
         right: 20px;
         left: 20px;
     };
+}
+@media screen and (max-width: 600px) {
+    .Body {
+        padding: 0;
+    }
+    *{
+        h2{
+            max-width: 300px
+        }
+    }  
 }

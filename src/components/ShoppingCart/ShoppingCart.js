@@ -26,7 +26,7 @@ function DeviceInCart({id,device}){
           </span>
           </div>
         </div>
-        <div className={classes.Xclose} style={{marginLeft: 30, width: 15, height: 15}}onClick={()=>dispatch(deleteFromCart(id))}></div>
+        <div className={`${classes.Xclose} ${classes.DeviceXclose}`}onClick={()=>dispatch(deleteFromCart(id))}></div>
      </div>
     );
 }

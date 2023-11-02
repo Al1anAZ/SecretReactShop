@@ -13,6 +13,8 @@
     padding: {
       left: 10px;
       right: 15px;
+      top: 5px;
+      bottom:  5px;
     };
     height: 500px;
     overflow: hidden;
@@ -132,4 +134,128 @@
    &:hover::before, &:hover::after {
     background-color: red;
    }
+   &.DeviceXclose{
+    margin-left: 30px;
+    width: 15px;
+    height: 15px;
+   }
+}
+@media screen and (max-width: 600px) {
+    .Xclose{
+        margin-top: 3px;
+        width: 20px;
+        height: 20px;
+        &.DeviceXclose{
+            margin-left: 0px
+        }
+    }
+    .ShoppingCart{
+        width: 330px;
+        height: 530px;
+        h2{
+            font-size: 24px;
+        }
+    }
+    .TopShoppingCart{
+        padding-bottom: 10px;
+      
+    }
+    .BottomShoppingCart{
+        >button{
+            padding: 0 !important;
+            width: 130px !important;
+            height: 50px !important;
+            font-size: 13px !important;
+             
+        }
+    }
+    .TotalPrice{
+        font-size: 15px;
+    }
+    .DevicesInCart{
+      height: 340px;
+    }
+    .DeviceInCart{
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 14px;
+        >img{
+            height: 80px;
+            width: 70px;
+        }
+        >div{
+            margin-left: 0;
+            h3{
+                font-size: 15px;
+            }
+        }
+    }
+    .DeviceCount{
+       >input{
+        max-width: 55px;
+        font-size: 15px;
+       }
+    }
+}
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .Xclose{
+        margin-top: 3px;
+        width: 20px;
+        height: 20px;
+        &.DeviceXclose{
+            margin-left: 0px
+        }
+    }
+    .ShoppingCart{
+        width: 530px;
+        height: 250px;
+        h2{
+            font-size: 24px;
+        }
+      }
+      .TopShoppingCart{
+        padding-bottom: 10px;
+      
+    }
+    .BottomShoppingCart{
+        >button{
+            padding: 0 !important;
+            width: 130px !important;
+            height: 50px !important;
+            font-size: 13px !important;
+             
+        }
+    }
+    .TotalPrice{
+        font-size: 15px;
+    }
+    .DevicesInCart{
+      margin: {
+        top: 20px;
+        bottom: 20px;
+      };
+      height: 118px;
+    }
+    .DeviceInCart{
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        >img{
+            height: 80px;
+            width: 70px;
+        }
+        >div{
+            margin-left: 0;
+            h3{
+                font-size: 15px;
+            }
+        }
+    }
+    .DeviceCount{
+       >input{
+        max-width: 55px;
+        font-size: 15px;
+       }
+    }  
 }

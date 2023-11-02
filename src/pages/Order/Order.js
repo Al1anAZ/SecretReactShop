@@ -76,16 +76,16 @@ function Order(){
     return(
         <>
         {orderComplete ? 
-        <div style={{textAlign: "center", marginTop: 100}}><h2>Ваше замовлення №<span style={{color: "rgba(113, 77, 175, 1)"}}>{orderId}</span> в обробці <br/>&#128516;</h2>
+        <div className={classes.OrderComplete}><h2>Ваше замовлення №<span style={{color: "rgba(113, 77, 175, 1)"}}>{orderId}</span> в обробці <br/>&#128516;</h2>
         <MyButton inlinestyle={MyButtonSubmitStyle} handle={()=>setPreventDrop(false)}>Повернутися</MyButton>
         </div>
         :  
          <>
-        <h2 style={{color: "rgba(113, 77, 175, 1)"}}>Оформлення<span style={{color: "black"}}> замовлення:</span></h2>
          {loading ? 
-        <div style={{textAlign: "center", marginTop: 140}}><img src="./imgs/UI/Loading.svg" width={500} height={500}/></div>
+        <div className={classes.Loading}><img src="./imgs/UI/Loading.svg" width={300} height={300}/></div>
         :  
         <div className={classes.OrderForm}>
+                  <h2 style={{color: "rgba(113, 77, 175, 1)"}}>Оформлення<span style={{color: "black"}}> замовлення:</span></h2>
            <form name="Order">
               <input name="name" placeholder="Введіть Імя*" className={isValid.name ? null : classes.ValiInput}
                onFocus={()=>{

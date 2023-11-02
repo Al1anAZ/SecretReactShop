@@ -8,7 +8,7 @@
             color: black;
         }
     }
-    height: 100vh;
+    min-height: 74.1vh;
 }
 .AllFavoriteDevices{
     padding: {
@@ -17,4 +17,14 @@
     justify-content:space-evenly ;
     display: flex;
     flex-wrap: wrap;
+}
+@media screen and (max-width:  600px) {
+    .FavoriteDevices{
+        padding-top: 70px;
+        h2{
+            font-size: 26px;
+            margin: auto;
+            text-align: center;
+        }
+    }
 }

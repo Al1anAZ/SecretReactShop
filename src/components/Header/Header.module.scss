@@ -67,3 +67,11 @@
         visibility: visible;
     }
 }
+
+@media screen and (max-width: 600px) {
+  .LogoBox{
+    >h3{
+        font-size: 17px;
+    }
+  }
+}
