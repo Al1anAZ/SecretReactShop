@@ -71,7 +71,7 @@ function Order(){
     },[devicestoOrder])
    
     if(!devicestoOrder.length && !preventDrop)
-      return <Navigate to={"/"}/>
+      return <Navigate to={"/SecretReactShop/"}/>
 
     return(
         <>
@@ -152,7 +152,8 @@ function Order(){
                catch(error){
                     console.log("Не вдалось підтвердити замовлення")
                }
-
+               setLoading(false)
+               setorderComplete(true)
             }} inlinestyle={MyButtonSubmitStyle} disable={editOrder || !isValid.email || !isValid.name || !isValid.phone || !formData.name || !formData.email || !formData.phone}>Підтвердити замовлення!</MyButton>
        </div>
         }
