@@ -6,7 +6,7 @@ import { addToCart } from "../../store/CartSlice";
 import { addToFavorites,deleteFromFavorites } from "../../store/DevicesSlice";
 import ContentLoader from "react-content-loader";
 
-function Device({device,loading = false, infavorite = false}){
+function Device({device,loading = false}){
     const dipatch = useDispatch();
     const favoriteItems = useSelector(state=> state.devices.favorites)
     let isFavorite;
@@ -42,7 +42,7 @@ function Device({device,loading = false, infavorite = false}){
               <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}>
                   <img src={isFavorite ? "../SecretReactShop/imgs/UI/Liked.svg" : "../SecretReactShop/imgs/UI/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
               </div>
-                <img src={infavorite ? `../SecretReactShop${device.src}` : device.src}alt="Device" width={170} height={189}/>
+                <img src={device.src}alt="Device" width={170} height={189}/>
             <div className={classes.DeviceText}>
              <b>{device.name}</b>
              <hr/>

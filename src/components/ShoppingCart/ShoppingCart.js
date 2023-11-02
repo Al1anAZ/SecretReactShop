@@ -1,7 +1,7 @@
 import classes from "./ShoppingCart.module.scss"
 import MyButton from "../UI/MyButton/MyButton";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart,setisOrderComplete } from "../../store/CartSlice";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +9,10 @@ import { useNavigate } from "react-router-dom";
 
 function DeviceInCart({id,device}){
   const dispatch = useDispatch();
-
     return(
      <div className={classes.DeviceInCart}>
-        <img src={`../SecretReactShop${device.src}`} alt="DeviceInCard" width={153} height={189}/>
+        <img src={`${device.src}`} alt="DeviceInCard" width={153} height={189}/>
+        
         <div>
           <span>{device.name}</span>
            <hr/>

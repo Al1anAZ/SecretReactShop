@@ -14,7 +14,7 @@ function DevicesForOder({device,editOrder}){
     return(
         <div className={rootClass.join(" ")}>
            <div>
-             <img src={`../SecretReactShop${device.src}`} height={110} width={100}/>
+             <img src={`${device.src}`} height={110} width={100}/>
              <div className={classes.DeviceText}>
              <b>{device.name}</b>
              <hr/>
