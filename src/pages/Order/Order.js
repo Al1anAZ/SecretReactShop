@@ -81,7 +81,7 @@ function Order(){
         </div>
         :  
          <>
-         {!loading ? 
+         {loading ? 
         <div className={classes.Loading}><img src="../SecretReactShop/imgs/UI/Loading.svg" width={300} height={300}/></div>
         :  
         <div className={classes.OrderForm}>
@@ -152,8 +152,7 @@ function Order(){
                catch(error){
                     console.log("Не вдалось підтвердити замовлення")
                }
-               setLoading(false)
-               setorderComplete(true)
+
             }} inlinestyle={MyButtonSubmitStyle} disable={editOrder || !isValid.email || !isValid.name || !isValid.phone || !formData.name || !formData.email || !formData.phone}>Підтвердити замовлення!</MyButton>
        </div>
         }
