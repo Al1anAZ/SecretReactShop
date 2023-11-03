@@ -242,6 +242,11 @@
     height: 71vh;
   }
 }
+@media screen and (max-width: 600px){
+  .OrderForm{
+    padding-top: 100px;
+  }
+}
 @media screen and (max-height: 700px) and (orientation: landscape){
   .OrderComplete{
     padding-top: 0;
