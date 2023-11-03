@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import Favorites from "./pages/Favorites/Favorites";
 import Order from "./pages/Order/Order";
 
-import { Route,Routes,useNavigate} from "react-router-dom";
+import { Route,Routes} from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosDevices } from "./store/asyncActions/devices";
@@ -19,7 +19,6 @@ function App() {
 
 
 const dispatch = useDispatch();
-const navigate = useNavigate();
 const visibleCart = useSelector(state => state.cart.cartVisible)
 const cart = useSelector(state => state.cart.devicesInCart)
 const favoriteItems = useSelector(state => state.devices.favorites)

@@ -1,9 +1,9 @@
 import classes from "./ShoppingCart.module.scss"
 import MyButton from "../UI/MyButton/MyButton";
 
-import { useEffect, useMemo } from "react";
+import {useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart,setisOrderComplete } from "../../store/CartSlice";
+import { deleteFromCart,minusAmmount,plusAmmount,setVisibleCart } from "../../store/CartSlice";
 import { useNavigate } from "react-router-dom";
 
 

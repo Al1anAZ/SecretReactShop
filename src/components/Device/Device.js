@@ -39,7 +39,7 @@ function Device({device,loading = false}){
         </div>
          :
         <div className={classes.Device}>
-              <div style={{marginBottom: 10,width: "100%",textAlign: "end",paddingRight: 27}}>
+              <div className={classes.LikeBox}>
                   <img src={isFavorite ? "../SecretReactShop/imgs/UI/Liked.svg" : "../SecretReactShop/imgs/UI/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
               </div>
                 <img src={device.src}alt="Device" width={170} height={189}/>

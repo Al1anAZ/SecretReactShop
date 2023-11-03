@@ -5,7 +5,7 @@
     font-weight: 700;
     border: none;
     cursor: pointer;
-    transition: background 0.1s;
+    transition: background 0.1s, transform 0.1s;
     &:hover{
         background: $MainPurpuleLight;
     }
@@ -16,4 +16,24 @@
         cursor: not-allowed;
         background: $MainPurpuleLight;
     }
+}
+@media screen and (max-width:  600px){
+   .MyButton{
+      &:hover{
+        background: $MainPurpule;
+     }
+     &:active{
+        transform: translate(0,-3px);
+     }
+   }
+}
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .MyButton{
+        &:hover{
+          background: $MainPurpule;
+       }
+       &:active{
+          transform: translate(0,-3px);
+       }
+     }
 }

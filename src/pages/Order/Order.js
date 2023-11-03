@@ -14,7 +14,7 @@ function DevicesForOder({device,editOrder}){
     return(
         <div className={rootClass.join(" ")}>
            <div>
-             <img src={`${device.src}`} height={110} width={100}/>
+             <img src={`${device.src}`} height={110} width={100} alt="Device"/>
              <div className={classes.DeviceText}>
              <b>{device.name}</b>
              <hr/>
@@ -68,7 +68,7 @@ function Order(){
         orderprice: price,
         devices: devicestoOrder
      })
-    },[devicestoOrder])
+    },[devicestoOrder,formData])
    
     if(!devicestoOrder.length && !preventDrop)
       return <Navigate to={"/SecretReactShop/"}/>
@@ -82,7 +82,7 @@ function Order(){
         :  
          <>
          {loading ? 
-        <div className={classes.Loading}><img src="../SecretReactShop/imgs/UI/Loading.svg" width={300} height={300}/></div>
+        <div className={classes.Loading}><img src="../SecretReactShop/imgs/UI/Loading.svg" width={300} height={300} alt="Loading"/></div>
         :  
         <div className={classes.OrderForm}>
                   <h2 style={{color: "rgba(113, 77, 175, 1)"}}>Оформлення<span style={{color: "black"}}> замовлення:</span></h2>

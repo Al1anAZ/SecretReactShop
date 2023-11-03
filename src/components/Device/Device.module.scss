@@ -22,21 +22,6 @@
     transform: translate(0,-20px);
     box-shadow: 1px 5px 10px rgb(70, 70, 70);
    }
-   &.loading{
-    padding-top: 30px;
-    >div{
-        background-color: gainsboro;
-        border-radius: 5px;
-        margin-bottom: 22px;
-    }
-    >button{
-        background-color: gainsboro;
-    }
-    &:hover{
-        transform: none;
-        box-shadow: 1px 5px 10px rgb(189, 188, 188);
-       }
-   }
 }
 .DeviceText{
     margin: {
@@ -53,6 +38,13 @@
     color: $MainPurpule;
    }
 }
+.LikeBox{
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: end;
+    padding-right: 27px;
+    transition: transform 0.1s;
+}
 @media screen and (max-width:  600px){
     .Device{
         margin: auto auto 30px auto;
@@ -63,6 +55,15 @@
         >img{
             width: 130px;
             height: 150px;
+        }
+        &:hover{
+            transform: none;
+            box-shadow: 1px 5px 10px rgb(189, 188, 188);
+        }
+    }
+    .LikeBox{
+        &:active{
+            transform: translate(0,-3px);
         }
     }
     .DeviceText{
@@ -77,6 +78,19 @@
         }
         >p{
             font-size: 18px;
+        }
+    }
+}
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .Device{
+        &:hover{
+            transform: none;
+            box-shadow: 1px 5px 10px rgb(189, 188, 188);
+        }
+    }
+    .LikeBox{
+        &:active{
+            transform: translate(0,-3px);
         }
     }
 }

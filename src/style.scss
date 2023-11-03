@@ -15,17 +15,18 @@
     }
 }
 .Wrapper{
-    background: url('../public/imgs/bg.webp') no-repeat fixed center;
     background-size: cover;
     display: flex;
     justify-content: center;
 }
 .Body{
-    margin-top: 85px;
+    box-shadow: 0 0 5px 0px #b3b2b2;
+-webkit-box-shadow: 0 0 5px 0px#b3b2b2;
+-moz-box-shadow: 0 0 5px 0px #b3b2b2;
     background-color: white;
     width: 1440px;
     padding: {
-        top: 30px;
+        top: 100px;
         right: 20px;
         left: 20px;
     };

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import Device from "../../components/Device/Device";
+import MySlider from "../../components/UI/MySlider/MySlider";
 import classes from "./Home.module.scss"
 import { useMemo, useState } from "react";
 
@@ -9,11 +10,15 @@ function Home(){
     const devices = useSelector(state => state.devices.devices);
     const searchedQuerry = useMemo(()=>{
         return devices.filter(item=> item.name.toLowerCase().includes(search.toLocaleLowerCase()))
-    },[search])
+    },[search,devices])
     return(
       <>
-          <div className={classes.Slider}>
-           </div>
+          <MySlider>
+             <img src="../SecretReactShop/imgs/Slider/1.webp" alt="firstSliderElement"/>
+             <img src="../SecretReactShop/imgs/Slider/2.webp" alt="firstSecondElement"/>
+             <img src="../SecretReactShop/imgs/Slider/3.webp" alt="firstThirdElement"/>
+             <img src="../SecretReactShop/imgs/Slider/4.webp" alt="firstFourthElement"/>
+          </MySlider> 
        <div className={classes.AllDevices}>
         <div className={classes.SearchAndText}>  
            {search.length ? <h2>Результати<span> пошуку:</span> {`"${search}"`}</h2> :<h2>Усі<span> девайси:</span></h2>}

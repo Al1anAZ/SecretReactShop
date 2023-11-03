@@ -1,0 +1,50 @@
+@import "../../../values.scss";
+
+.SliderContainer{
+ max-height: 600px;
+ max-width: 1000px;
+ margin: { 
+    right: auto;
+    left: auto;
+    top: 30px;
+ }
+ display: flex;
+ align-items: center;
+
+}
+.ViewWindow{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.Items{
+   height: 100%;
+   display: flex;
+   transition: all 0.5s;
+   transition-timing-function: ease-in-out;
+}
+.Arrow{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    transition: all 0.2s;
+    &:active{
+        color:  $MainPurpule;
+    }
+}
+@media screen and (max-width: 600px) {
+    .SliderContainer{
+        margin-top: 100px;
+    }
+    .Arrow{
+         height: 20px;
+         width: 50px;
+     }
+}
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .Arrow{
+        height: 30px;
+        width: 60px;
+    }
+}
