@@ -31,7 +31,7 @@ export default React.memo(function Header(){
             <span className={showAmmountInCard.join(" ")}>{ammoutInCard}</span>
           </li>
           <li>
-            <Link to="/favorites">
+            <Link to="/SecretReactShop/favorites">
               <img src="./imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
               <span className={showAmmountFavorites.join(" ")}>{favDevices.length}</span>
             </Link>

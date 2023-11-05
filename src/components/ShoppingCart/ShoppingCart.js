@@ -67,7 +67,7 @@ const price = useMemo(()=>devicesInCard.reduce((prev,curr)=>{
                  <MyButton inlinestyle={BuyNowButtonStyle} disable = {devicesInCard.length ? false : true}
                   handle={()=>{
                   dipatch(setVisibleCart(false))
-                  navigate('/order')
+                  navigate('/SecretReactShop/order')
                 }
                   }>
                     Купити зараз!

@@ -59,8 +59,8 @@ useEffect(()=>{
      <div className="Body">
         <Routes> 
           <Route path="/SecretReactShop/" element={<Home/>}></Route>
-          <Route path="/favorites" element={<Favorites/>}></Route>
-          <Route path="/order" element={<Order/>}></Route>
+          <Route path="/SecretReactShop/favorites" element={<Favorites/>}></Route>
+          <Route path="/SecretReactShop/order" element={<Order/>}></Route>
         </Routes>
         <Footer/>
      </div>
