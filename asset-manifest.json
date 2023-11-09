@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SecretReactShop/static/css/main.7bb1745b.css",
+    "main.css": "/SecretReactShop/static/css/main.27fc4fc6.css",
     "main.js": "/SecretReactShop/static/js/main.e4e3eea8.js",
     "static/media/search.svg": "/SecretReactShop/static/media/search.7dfa4c6734c3c8d3cedd.svg",
     "index.html": "/SecretReactShop/index.html",
-    "main.7bb1745b.css.map": "/SecretReactShop/static/css/main.7bb1745b.css.map",
+    "main.27fc4fc6.css.map": "/SecretReactShop/static/css/main.27fc4fc6.css.map",
     "main.e4e3eea8.js.map": "/SecretReactShop/static/js/main.e4e3eea8.js.map"
   },
   "entrypoints": [
-    "static/css/main.7bb1745b.css",
+    "static/css/main.27fc4fc6.css",
     "static/js/main.e4e3eea8.js"
   ]
 }
