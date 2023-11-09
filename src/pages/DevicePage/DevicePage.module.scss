@@ -1,0 +1,165 @@
+@import "../../values.scss";
+
+.DevicePageBody{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 75.6vh;
+    >:first-child{
+         margin: 0;
+         width: 500px;
+         height: 495px;
+    }
+}
+.DiviceDiscription{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    >h2{
+       color: $MainPurpule;
+       font-size: 40px;
+       margin-bottom: 15px;
+    }
+    >hr{
+        border-top: 1px solid $MainPurpule;
+        margin-bottom: 15px;
+    }
+}
+.PriceAndButtonsBOX{
+    padding: {
+        top: 15px;
+        bottom: 30px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.PriceAndFavorite{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: $MainPurpule;
+    >span:first-child{
+        color: red;
+        font-size: 30px;
+        font-weight: 900;
+    }
+    >span:last-child{
+        margin-left: 83px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 900;
+        transition: transform 0.1s;
+    }
+}
+.Buttons{
+    display: flex;
+    align-items: center;
+    > button{
+        height: 54px;
+        width: 195px;
+    }
+    :first-child{
+        font-size: 16px;
+        border: 2px solid $MainPurpule;
+        background-color: transparent;
+        color: $MainPurpule;
+        border-radius: 30px;
+        &:hover{
+            color: white;
+            background-color: $MainPurpuleLight;
+            border-color:  $MainPurpuleLight;
+        }
+        &:active{
+            background-color: $MainPurpuleDark;
+            border-color:  $MainPurpuleDark;
+        }
+    }
+    :last-child{
+        margin-left: 2px;
+        font-size: 24px;
+        border-radius: 30px 7px 7px 30px
+    }
+}
+.BottomDescription{
+    max-width: 900px;
+    >h3{
+        margin-bottom: 6px;
+        color: $MainPurpule;
+    }
+    >span{
+        font-weight: 600;
+    }
+    margin-bottom: 20px;
+}
+@media screen and (max-width:  600px){
+    .DevicePageBody{
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+        >:first-child{
+            max-width: 370px;
+            max-height: 300px;
+        }
+    }
+    .DiviceDiscription{
+        margin-top: 10px;
+        >h2{
+            font-size: 34px;
+            margin: auto;
+            text-align: center;
+        }
+    }
+    .BottomDescription{
+    text-align: center;
+    }
+    .PriceAndButtonsBOX{
+        justify-content: center;
+    }
+    .Buttons{
+        margin-top: 30px;
+        > button{
+            height: 44px;
+            width: 155px;
+            &:last-child{
+                margin-left: 50px;
+            }
+        }
+    }
+    .PriceAndFavorite{
+        >span:last-child{
+            background-color: transparent;
+        }
+        >span:last-child:active{
+            transform: translate(0,-3px);
+        }
+    }
+
+}
+@media screen and (max-height: 700px) and (orientation: landscape){
+    .DiviceDiscription{
+        margin-top: 10px;
+    }
+    .DevicePageBody{
+        >:first-child{
+           max-width: 370px;
+           max-height: 275px;
+           margin: {
+            top: 0;
+            left: auto;
+            right: auto;
+           };
+        }
+    }
+    .PriceAndFavorite{
+        >span:last-child{
+            background-color: transparent;
+        }
+        >span:last-child:active{
+            transform: translate(0,-3px);
+        }
+    }
+}

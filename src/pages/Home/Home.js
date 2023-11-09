@@ -5,12 +5,22 @@ import classes from "./Home.module.scss"
 import { useMemo, useState } from "react";
 
 function Home(){
+  const [timerId, setTimerId] = useState(null);
   const [search,setSearch] = useState("");
     const loadingdevices = [<Device key={0} loading = {true}/>,<Device  key={1} loading = {true}/>,<Device  key={2} loading = {true}/>,<Device  key={3} loading = {true}/>,<Device key={4}  loading = {true}/>]
     const devices = useSelector(state => state.devices.devices);
     const searchedQuerry = useMemo(()=>{
         return devices.filter(item=> item.name.toLowerCase().includes(search.toLocaleLowerCase()))
     },[search,devices])
+    const handleSearchChange = (e) => {
+      if (timerId)
+        clearTimeout(timerId);
+
+      const newTimerId = setTimeout(() =>setSearch(e.target.value), 1500);
+  
+      setTimerId(newTimerId);
+    };
+  
     return(
       <>
           <MySlider>
@@ -25,7 +35,7 @@ function Home(){
               {devices.length ? 
               <div className={classes.Search}>
                  <div>
-                   <input placeholder="Я шукаю..." onChange={(e)=>setSearch(e.target.value)}></input>
+                   <input placeholder="Я шукаю..." onChange={handleSearchChange}></input>
                  </div>
              </div> : null}
            </div>

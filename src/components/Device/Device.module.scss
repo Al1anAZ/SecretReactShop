@@ -1,5 +1,6 @@
 @import "../../values.scss";
 .Device{
+    cursor: pointer;
     z-index: 0;
     background: white;
     margin-bottom: 30px;
@@ -39,11 +40,25 @@
    }
 }
 .LikeBox{
+    display: flex;
+    justify-content: end;
     margin-bottom: 10px;
     width: 100%;
     text-align: end;
     padding-right: 27px;
     transition: transform 0.1s;
+    >span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+        transition: background 0.2s;
+    }
+    >span:hover{
+        background-color: $MainPurpuleLight;
+    }
 }
 @media screen and (max-width:  600px){
     .Device{
@@ -62,6 +77,9 @@
         }
     }
     .LikeBox{
+        >span:hover{
+            background-color: transparent;
+        }
         &:active{
             transform: translate(0,-3px);
         }
@@ -89,6 +107,9 @@
         }
     }
     .LikeBox{
+        >span:hover{
+            background-color: transparent;
+        }
         &:active{
             transform: translate(0,-3px);
         }

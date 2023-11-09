@@ -32,7 +32,7 @@ export default React.memo(function Header(){
           </li>
           <li>
             <Link to="/SecretReactShop/favorites">
-              <img src="./imgs/UI/Unliked.svg" width={24} height={24} alt="Profile"/>
+              <img src="./imgs/UI/Unliked.svg" width={24} height={24} alt="Favorites"/>
               <span className={showAmmountFavorites.join(" ")}>{favDevices.length}</span>
             </Link>
           </li>

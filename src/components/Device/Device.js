@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/CartSlice";
 import { addToFavorites,deleteFromFavorites } from "../../store/DevicesSlice";
 import ContentLoader from "react-content-loader";
+import { useNavigate } from "react-router-dom";
 
 function Device({device,loading = false}){
     const dipatch = useDispatch();
+    const navigator = useNavigate();
     const favoriteItems = useSelector(state=> state.devices.favorites)
     let isFavorite;
     if(!loading){
@@ -18,6 +20,10 @@ function Device({device,loading = false}){
           dipatch(deleteFromFavorites(item))
         else
           dipatch(addToFavorites(item))
+    }
+    function handleGoToDevicePage(){
+       const serializedDevice = encodeURIComponent(JSON.stringify(device));
+       navigator(`/SecretReactShop/devicepage/${serializedDevice}`)
     }
     return(
         <>
@@ -38,9 +44,11 @@ function Device({device,loading = false}){
          </ContentLoader>
         </div>
          :
-        <div className={classes.Device}>
+        <div className={classes.Device} onClick={handleGoToDevicePage}>
               <div className={classes.LikeBox}>
-                  <img src={isFavorite ? "../SecretReactShop/imgs/UI/Liked.svg" : "../SecretReactShop/imgs/UI/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={()=> handleFavorite(isFavorite,device)}/>
+                <span><img src={isFavorite ? "../SecretReactShop/imgs/UI/Liked.svg" : "../SecretReactShop/imgs/UI/Unliked.svg"} style={{ cursor: "pointer"}}alt="Heart" width={24} height={24} onClick={(e)=>{ 
+                    e.stopPropagation();
+                    handleFavorite(isFavorite,device)}}/></span>
               </div>
                 <img src={device.src}alt="Device" width={170} height={189}/>
             <div className={classes.DeviceText}>
@@ -49,7 +57,9 @@ function Device({device,loading = false}){
              <p>{device.price} грн.</p>
             </div>
            <MyButton inlinestyle={MyButtonStyle}
-            handle={()=>dipatch(addToCart({...device, count: 1}))}>
+            handle={(e)=>{
+                e.stopPropagation();
+                dipatch(addToCart({...device, count: 1}))}}>
                 Купити</MyButton>
        </div>}
 

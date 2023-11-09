@@ -5,6 +5,7 @@ import MyModal from "./components/UI/MyModal/MyModal";
 import Home from "./pages/Home/Home";
 import Favorites from "./pages/Favorites/Favorites";
 import Order from "./pages/Order/Order";
+import DevicePage from "./pages/DevicePage/DevicePage";
 
 import { Route,Routes} from "react-router-dom";
 import { useEffect } from "react";
@@ -61,6 +62,7 @@ useEffect(()=>{
           <Route path="/SecretReactShop/" element={<Home/>}></Route>
           <Route path="/SecretReactShop/favorites" element={<Favorites/>}></Route>
           <Route path="/SecretReactShop/order" element={<Order/>}></Route>
+          <Route path="/SecretReactShop/devicepage/:codeddevice" element={<DevicePage/>}></Route>
         </Routes>
         <Footer/>
      </div>
