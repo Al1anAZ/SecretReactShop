@@ -12,12 +12,10 @@ export default React.memo(function Header(){
   const devicesInCart = useSelector(state => state.cart.devicesInCart)
   const ammoutInCard = useMemo(()=> devicesInCart.reduce((prev,curr)=> prev + 1 * curr.count,0),[devicesInCart])
   const favDevices = useSelector(state=> state.devices.favorites)
-  if(ammoutInCard){
+  if(ammoutInCard)
     showAmmountInCard.push(classes.active)
-  }
-  if(favDevices.length){
+  if(favDevices.length)
     showAmmountFavorites.push(classes.active)
-  }
     return(
         <div className={classes.Header}>
         <div className={classes.HeaderElement}>

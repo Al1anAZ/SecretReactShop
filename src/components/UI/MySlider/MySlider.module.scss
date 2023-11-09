@@ -1,6 +1,7 @@
 @import "../../../values.scss";
 
 .SliderContainer{
+ user-select: none;
  max-height: 600px;
  max-width: 1000px;
  margin: { 

@@ -42,6 +42,7 @@
     list-style: none;
     display: flex;
     >li{
+        padding: 2px;
         cursor: pointer;
         border-radius: 5px;
         display: flex;
@@ -64,9 +65,9 @@
     width: 15px;
     height: 15px;
     font-size: 12px;
-    visibility: hidden;
+    display: none;
     &.active{
-        visibility: visible;
+        display: inline;
     }
 }
 
