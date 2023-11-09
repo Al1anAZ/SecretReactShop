@@ -40,7 +40,7 @@ function DevicePage(){
                             dispatch(addToCart({...device, count: 1}))
                             dispatch(setVisibleCart(true))
                             }}>Купити в один клік</MyButton>
-                        <MyButton handle={()=>dispatch(addToCart({...device, count: 1}))}>У кошик</MyButton>
+                        <MyButton handle={()=>dispatch(addToCart({...device,src: device.src.slice(2), count: 1}))}>У кошик</MyButton>
                    </div>
                  </div>
                  <hr/>
