@@ -21,11 +21,11 @@ function DevicePage(){
     return(
         <div className={classes.DevicePageBody}>
              <MySlider>
-                <img src={device.src} alt="Device"/>
-                <img src={device.src} alt="Device"/>
-                <img src={device.src} alt="Device"/>
-                <img src={device.src} alt="Device"/>
-                <img src={device.src} alt="Device"/>
+                <img src={device.src.slice(2)} alt="Device"/>
+                <img src={device.src.slice(2)} alt="Device"/>
+                <img src={device.src.slice(2)} alt="Device"/>
+                <img src={device.src.slice(2)} alt="Device"/>
+                <img src={device.src.slice(2)} alt="Device"/>
              </MySlider>
              <div className={classes.DiviceDiscription}>
                  <h2>{device.name}</h2>
@@ -33,7 +33,7 @@ function DevicePage(){
                  <div className={classes.PriceAndButtonsBOX}>
                    <div className={classes.PriceAndFavorite}>
                    <span>{device.price} грн</span>
-                   <span style={{cursor: "pointer"}} onClick={()=>handleFavorite(isFavorite,device)}><img  src={isFavorite ? "../imgs/UI/Liked.svg" : "../imgs/UI/Unliked.svg"} alt="Heart" width={24} height={24} style={{marginRight: 5}}/>{!isFavorite && `В oбранe`}</span>
+                   <span style={{cursor: "pointer"}} onClick={()=>handleFavorite(isFavorite,device)}><img  src={isFavorite ? "/SecretReactShop/imgs/UI/Liked.svg" : "/SecretReactShop/imgs/UI/Unliked.svg"} alt="Heart" width={24} height={24} style={{marginRight: 5}}/>{!isFavorite && `В oбранe`}</span>
                    </div>
                    <div className={classes.Buttons}>
                         <MyButton handle={()=>{
