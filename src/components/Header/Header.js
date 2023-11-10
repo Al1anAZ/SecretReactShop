@@ -25,14 +25,18 @@ export default React.memo(function Header(){
             </Link>
         <ul className={classes.UIBox}>
           <li style={{marginRight: 10}} onClick={()=>dipatch(setVisibleCart(true))}>
+            <div>
             <img src="./imgs/UI/ShoppingCart.svg" width={24} height={24} alt="ShoppingCart"/>
             <span className={showAmmountInCard.join(" ")}>{ammoutInCard}</span>
+            </div>
           </li>
           <li>
+            <div>
             <Link to="/SecretReactShop/favorites">
               <img src="./imgs/UI/Unliked.svg" width={24} height={24} alt="Favorites"/>
               <span className={showAmmountFavorites.join(" ")}>{favDevices.length}</span>
             </Link>
+            </div>
           </li>
           {/* <li>
             <img src="/imgs/UI/Profile.svg" width={24} height={24} alt="Profile"/>

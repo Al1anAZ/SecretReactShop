@@ -42,13 +42,19 @@
     list-style: none;
     display: flex;
     >li{
+        width: 32px;
+        height: 30px;
         padding: 2px;
         cursor: pointer;
         border-radius: 5px;
         display: flex;
         transition: background-color 0.3s;
-        >a{
+        >div{
             display: flex;
+            >a{
+                padding-left: 2px;
+                display: flex;
+            }
         }
     }
     >li:hover{
@@ -58,6 +64,7 @@
 }
 .Ammount{
     margin-top: 15px;
+    margin-right: 5px;
     color: white;
     background-color: $MainPurpule;
     text-align: center;
